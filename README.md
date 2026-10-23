@@ -99,21 +99,41 @@ allow/deny policy test—follow [Three short project demos](./OPEN-SHELL-KUBERNE
 
 ![OpenShell Kubernetes gateway connected and authenticated over mTLS](./screenshots/gateway-mtls-authenticated.png)
 
+The CLI reports that the Kubernetes gateway is connected and authenticated
+using mutual TLS (mTLS), rather than using the separate local Docker gateway.
+
 ### Command executed inside a Kubernetes sandbox
 
 ![Word-frequency command executed in the sandbox](./screenshots/sandbox-text-processing.png)
+
+The command processes sample text inside the sandbox and prints word counts.
+This shows a command being run through OpenShell in the Kubernetes workload,
+not directly in the host shell.
 
 ### Sandbox network boundary
 
 ![Gateway connection succeeds while access to the sandbox boundary service times out](./screenshots/network-boundary-test.png)
 
+The probe Pod can connect to the OpenShell gateway, while its connection to the
+sandbox boundary service times out. This illustrates the tested ingress rule;
+a timeout alone does not prove that every network path is blocked.
+
 ### OpenShell outbound policy loaded
 
 ![Sandbox policy allowing read-only curl access to example.com is loaded](./screenshots/openshell-egress-policy.png)
 
+The CLI reports that the sandbox-scoped policy update was loaded. It allows
+`/usr/bin/curl` to make read-only HTTPS requests to `example.com:443`; it does
+not grant that access globally.
+
 ### Allowed outbound request
 
 ![HTTPS request to example.com succeeds inside the sandbox](./screenshots/allowed-example-request.png)
+
+The request returns the Example Domain page from inside the sandbox, showing
+the allowed destination working with the configured OpenShell policy. The
+companion denied-destination result is documented with policy-log evidence in
+the [outbound policy demo](./OPEN-SHELL-KUBERNETES.md#3-allow-one-outbound-destination-and-deny-another).
 
 ## Repository contents
 
