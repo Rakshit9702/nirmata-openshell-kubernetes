@@ -20,3 +20,30 @@ repository.
 This is a local development demonstration, not a production security
 certification. Review the guide's verified checks and limitations before
 reproducing it.
+
+## Screenshots
+
+These screenshots show the successful demonstrations documented in the guide.
+The unapproved-destination terminal screenshot is intentionally omitted: by
+itself, a curl connection error does not prove that OpenShell policy caused the
+request to be denied.
+
+### Authenticated Kubernetes gateway
+
+![OpenShell Kubernetes gateway connected and authenticated over mTLS](./screenshots/gateway-mtls-authenticated.png)
+
+### Command executed inside the sandbox
+
+![Word-frequency command executed in the Kubernetes sandbox](./screenshots/sandbox-text-processing.png)
+
+### Sandbox network boundary
+
+![Gateway connection succeeds while access to the sandbox boundary service times out](./screenshots/network-boundary-test.png)
+
+### OpenShell egress rule loaded
+
+![Sandbox policy allowing read-only curl access to example.com is loaded](./screenshots/openshell-egress-policy.png)
+
+### Allowed outbound request
+
+![HTTPS request to example.com succeeds inside the sandbox](./screenshots/allowed-example-request.png)
