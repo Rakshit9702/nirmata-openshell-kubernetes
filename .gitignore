@@ -1,0 +1,15 @@
+# Local Ollama agent experiment (not part of this project submission)
+openshell_ollama_agent.py
+test_openshell_ollama_agent.py
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Local credentials and cluster configuration
+.env
+.env.*
+*.pem
+*.key
+kubeconfig
+kubeconfig.*
