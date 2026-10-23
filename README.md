@@ -7,11 +7,6 @@ This project shows OpenShell creating and governing workloads in a local
 gateway. It demonstrates sandbox command execution, a restricted sandbox
 boundary, and destination-specific outbound network policy.
 
-> **Scope:** This is a single-node Windows/WSL2 development demo, not a
-> production deployment or a complete security assessment. The tests cover
-> specific controls and paths; they do not certify every possible escape or
-> network path.
-
 ## What the demo shows
 
 | Demonstration | What was observed |
