@@ -143,17 +143,6 @@ the [outbound policy demo](./OPEN-SHELL-KUBERNETES.md#3-allow-one-outbound-desti
 | [`kind-config.yaml`](./kind-config.yaml) | Kind configuration with the default CNI disabled for Calico installation. |
 | [`screenshots/`](./screenshots/) | Selected screenshots of recorded demo results. |
 
-## Safety and cleanup
-
-- Only use the `kind-openshell` context for this project. Do not target other
-  Kind clusters.
-- The gateway port-forward is local and bound to the WSL-facing interface; do
-  not expose the unauthenticated gateway publicly or disable TLS verification.
-- Sandbox deletion removes that sandbox's workspace data. Review the
-  guide's cleanup section before running deletion commands.
-- Network-policy tests demonstrate selected controls only. This is not a
-  production security boundary or a comprehensive audit.
-
 ## Upstream references
 
 - [NVIDIA OpenShell 0.1.5 Kubernetes setup](https://docs.nvidia.com/openshell/v0.1.5/kubernetes/setup)
